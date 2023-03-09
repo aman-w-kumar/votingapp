@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: "2023-03-09T15:29:59Z"
+  generation: 3
+  name: simple
+  namespace: default
+  resourceVersion: "784734"
+  uid: 6d7a6088-cd29-4e18-96da-79e5e5e43a66
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: voting-app
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - ip: 10.42.0.5
